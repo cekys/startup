@@ -21,7 +21,6 @@ func main() {
 			log.Fatal(err)
 		}
 	}
-
 	// 读取配置文件中每一项指令对象
 	for _, i := range conf {
 		if i.Enabled {
