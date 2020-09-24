@@ -31,8 +31,14 @@ func main() {
 			cmd := exec.Command(i.Command, args...)
 			// 打印组合后的指令
 			fmt.Printf("%d: %v\n", n+1, cmd)
-			// 运行指令,不等待指令运行结束
-			err = cmd.Start()
+			// simple模式运行指令,等待指令运行结束
+			if i.Type == "" || i.Type == DefaultSimple {
+				err = gopkg.ProgramRealtimeOutput(cmd)
+			}
+			// forking模式运行指令,不等待指令运行结束
+			if i.Type == DefaultForking {
+				err = cmd.Start()
+			}
 			if err != nil {
 				log.Fatal(err)
 			}

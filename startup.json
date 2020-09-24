@@ -2,7 +2,8 @@
     {
         "enabled": true,
         "command": "echo",
-		"args": "hello startup"
+		"args": "hello startup",
+        "type": "simple"
     },
     {
         "enabled": true,

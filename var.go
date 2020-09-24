@@ -1,11 +1,12 @@
 package main
 
 const (
-	//DefaultConfig Default Config file path
-	DefaultConfig = "startup.json"
+	DefaultConfig  = "startup.json"
+	DefaultSimple  = "simple"
+	DefaultForking = "forking"
 )
 
 var (
-	conf        configs
-	defaultConf = make(configs, 2)
+	conf        config
+	defaultConf = make(config, 2)
 )
