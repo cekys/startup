@@ -3,7 +3,7 @@
         "enabled": true,
         "command": "echo",
 		"args": "hello startup",
-        "type": "simple"
+        "type": "forking"
     },
     {
         "enabled": true,

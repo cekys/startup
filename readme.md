@@ -9,7 +9,8 @@
     {
         "enabled": true,
         "command": "echo",
-        "args": "hello startup"
+        "args": "hello startup",
+        "type": "forking"
     },
     {
         "enabled": true,
@@ -25,10 +26,12 @@
 
 `command` 字符串：可执行文件名称或路径
 
-`args` 字符串：可执行文件参数
+`args` (可选，默认为`空`)字符串：可执行文件参数
+
+`type` (可选，默认为`simple`)字符串：`simple`执行指令，并等待指令完成、 `forking`执行指令，不等待指令完成
 
 ### 安装地址
 
 #### windows
 
-1. 将本程序可执行文件`startup`或者 `startup.exe`与配置文件`startup.json`放置在`windows` 自启动路径`C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp`下，即可开机启动
+1. 将本程序可执行文件与配置文件放置在`windows` 自启动路径`C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp`下，即可开机启动
