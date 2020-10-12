@@ -10,13 +10,21 @@ import (
 	"strings"
 )
 
+const (
+	DefaultConfig  = "startup.json"
+	DefaultSimple  = "simple"
+	DefaultForking = "forking"
+)
+
 func main() {
+	conf := config{}
+	defaultConf := make(config, 2)
 	// 读取配置文件
-	err := gopkg.ReadJSON(&conf, DefaultConfig)
+	err := conf.ReadFromFile(DefaultConfig)
 	if err != nil {
 		// 如果配置文件不存在则写入默认配置文件
 		if errors.Is(err, os.ErrNotExist) {
-			err = gopkg.WriteJSON(&defaultConf, DefaultConfig)
+			err = defaultConf.WriteToFile(DefaultConfig)
 			log.Fatal(err)
 		} else {
 			log.Fatal(err)
