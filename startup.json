@@ -2,8 +2,13 @@
     {
         "enabled": true,
         "command": "echo",
-		"args": "hello startup",
+		"args": "this is forking",
         "type": "forking"
+    },
+	{
+        "enabled": true,
+        "command": "echo",
+        "args": "this is simple"
     },
     {
         "enabled": true,

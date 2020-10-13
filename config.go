@@ -10,9 +10,12 @@ type config []struct {
 }
 
 func (conf *config) ReadFromFile(filename string) error {
+	j, err := gopkg.NewJsoner(conf)
+	if err != nil {
+		return err
+	}
 
-	jsoner := gopkg.Jsoner{Jst: &conf}
-	err := jsoner.ReadFromFile(filename)
+	err = j.ReadFromFile(filename)
 	if err != nil {
 		return err
 	}
@@ -20,8 +23,12 @@ func (conf *config) ReadFromFile(filename string) error {
 }
 
 func (conf *config) WriteToFile(filename string) error {
-	jsoner := gopkg.Jsoner{Jst: &conf}
-	err := jsoner.WriteToFile(filename)
+	j, err := gopkg.NewJsoner(conf)
+	if err != nil {
+		return err
+	}
+
+	err = j.WriteToFile(filename)
 	if err != nil {
 		return err
 	}
