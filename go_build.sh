@@ -1,5 +1,5 @@
 BASEDIR=$(dirname "$0")
-PROGRAM="startup"
+PROGRAM=`cat go.mod | grep 'module' | awk -F ' ' '{print $2}'`
 
 # cd to base dir
 cd ${BASEDIR}
