@@ -11,14 +11,14 @@ import (
 )
 
 const (
-	DefaultConfig  = "startup.json"
+	DefaultConfig  = "config.json"
 	DefaultSimple  = "simple"
 	DefaultForking = "forking"
 )
 
 func main() {
 	conf := config{}
-	defaultConf := make(config, 2)
+	defaultConf := make(config, 1)
 	// 读取配置文件
 	err := conf.ReadFromFile(DefaultConfig)
 	if err != nil {

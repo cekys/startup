@@ -14,7 +14,7 @@ env GOOS=windows GOARCH=amd64 go build -trimpath -ldflags "-s -w" -o build/Relea
 
 # ARM64
 # linux arm64
-#env GOOS=linux GOARCH=arm64 go build -trimpath -ldflags "-s -w" -o build/Release/${PROGRAM}_linux-arm64
+env GOOS=linux GOARCH=arm64 go build -trimpath -ldflags "-s -w" -o build/Release/${PROGRAM}_linux-arm64
 # macos arm64
 #env GOOS=darwin GOARCH=arm64 go build -trimpath -ldflags "-s -w" -o build/Release/${PROGRAM}_macos-arm64
 

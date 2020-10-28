@@ -9,8 +9,7 @@
     {
         "enabled": true,
         "command": "echo",
-        "args": "hello startup",
-        "type": "forking"
+        "args": "hello startup"
     },
     {
         "enabled": true,
